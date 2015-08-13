@@ -6,7 +6,7 @@ Step 2. Solve it
 
 Step 3. Profit
 
-Over the past year, the engineers on our Publisher team have been constantly iterating our release plan so that we can deploy quickly and safely. One of the biggest and most fun problems we face is our scale. Deploying code that is used by over 15 million websites means we have to be extra careful so we don't break all our customers' websites. We have learned a lot along the way and I was hoping to share some of our lessons learned and processes we currently implement to ensure quality.
+Over the past year, the engineers on our Publisher team have been constantly iterating our release plan so that we can deploy quickly and safely. One of the biggest and most fun problem we have is our scale. Deploying code that is used by over 15 million websites means we have to be extra careful. We have learned a lot along the way and I was hoping to share some of our lessons learned and processes we currently implement to ensure quality.
 
 ## The Problems and Solutions
 
