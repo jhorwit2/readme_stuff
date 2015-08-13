@@ -22,7 +22,7 @@ When I first started, our deployment process was as follows:
 
 ### Problem 1. Two-week release cycles
 
-At AddThis, most of our engineering teams follow a two-week sprint and release cycle, which we have found to be suboptimal on our team at our scale. Two-week releases pose a dangerous risk of introducing too many changes, which makes debugging problems harder. 
+At AddThis, most of our engineering teams follow a two-week sprint and release cycle, which we have found to be suboptimal on our team at our scale. Two-week releases introduce too many changes which correlates to a high risk of something going wrong. Also, the more changes you introduce at once the harder debugging problems is.  
 
 We decided to drop two-week release cycles and moved towards releasing whenever our engineers want. This means we are now releasing maybe 2 or 3 bug fixes at a time, if that. Following this release plan, we have noticed a tremendous drop in support tickets and with that an overall decrease in wasted developer time tracking down problems. We are also more confident in our releases because surface area of possible bugs has been reduced drastically over two-week releases.
 
