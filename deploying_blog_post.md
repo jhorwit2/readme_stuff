@@ -13,7 +13,7 @@ Over the past year, the engineers on our Publisher team have been constantly ite
 When I first started, our deployment process was as follows:
 
  1. Release every two weeks (not including hotfixes)
- 2. Build master and push to UAT
+ 2. Build master and push to UAT (pre-production)
  3. Get thumbs up from QA
  4. Tag master with current versioned release
  5. Deploy to all our production servers
