@@ -1,6 +1,6 @@
 # Lessons Learned Deploying Code used by over 15 million Websites
 
-Step 1. Realize you have a problem. 
+Step 1. Realize you have a problem.
 
 Step 2. Solve it
 
@@ -20,15 +20,15 @@ When I first started, our deployment process was as follows:
  6. Purge CDN
  7. Hope for the best
 
-### 1. Two-week release cycles
+### Problem 1. Two-week release cycles
 
 At AddThis, most of our engineering teams follow a two-week sprint and release cycle, which we have found to be suboptimal on our team at our scale. Two-week releases pose a dangerous risk of introducing too many changes, which makes debugging problems harder. 
 
 We decided to drop two-week release cycles and moved towards releasing whenever our engineers want. This means we are now releasing maybe 2 or 3 bug fixes at a time, if that. Following this release plan, we have noticed a tremendous drop in support tickets and with that an overall decrease in wasted developer time tracking down problems. We are also more confident in our releases because surface area of possible bugs has been reduced drastically over two-week releases.
 
-### 2-7. Deploy to everyone or no-one
+### Problems 2-7. Deploy to everyone or no-one
 
-We quickly came to realize that this deployment pattern was not working as well as we wanted. Our QA team is awesome and would find a lot of things in UAT; however, it's impossible to catch everything, especially when we have to work on a lot of legacy browsers across so many websites. One of our engineers had the awesome idea to replace UAT with 1% deploys (aka edge). What this means is that we deploy our new code to 1% of our users as a better sample space to find bugs before we release to 100%.
+We quickly came to realize that this deployment pattern was not working as well as we wanted. Our QA team is awesome and would find a lot of things in UAT; however, it's impossible to catch everything, especially when our code has to work on a lot of legacy browsers across so many websites. One of our engineers had the awesome idea to replace UAT with 1% deploys (aka edge). What this means is that we deploy our new code to 1% of our users as a better sample space to find bugs before we release to 100%.
 
 With this in mind here is our current plan:
 
@@ -61,4 +61,4 @@ These are just a few of the graphs that we have in our dashboard that we use dur
 
 This all starts with our external facing system logging requests to our various endpoints to [kafka](https://kafka.apache.org/). From there we have any number of downstream consumers who listen to these topics and do cool stuff with the data. In our example, we ingest a subset of the data and save it to [InfluxDB](https://influxdb.com), so that we can run queries on why things are bad and also populate our internal [grafana](http://grafana.org/) dasbhoards. 
 
-Want to know more? Leave some comments! Also, we are [hiring](http://www.addthis.com/careers?jvi=oeja0fwr,job) :D
+Want to know more? Leave some comments! Also, we are [hiring](http://www.addthis.com/careers?jvi=oeja0fwr,job) :D!
