@@ -33,14 +33,25 @@ We quickly came to realize that this deployment pattern was not working as well 
 With this in mind here is our current plan:
 
  1. Release whenever
- 2. Build master and push to servers as edge
+ 2. Build master and push to servers as new edge code
  3. Purge CDN
  4. Monitor real-time graphs for 10-15 minutes (talked about next)
  5. Tag branch & change symlinks so edge is now live to 100% traffic
  6. Monitor real-time graphs for 10-15 minutes (if not longer as the graphs are always next to us on monitors)
  7. Grab a beer because you can be sure IE8 didn't break.
  
- This new deployment process has been its weight in gold. 
-
+Moving to edge releases has been one of the best moves we have done as far as ensuring quality is concerned. Our sample size is large enough that we can monitor different browsers on our various endpoints to feel safe about our releases. 
 
 ### 3. No real-time insights into our deployments
+
+This has been the fun project we have been interating on and making better over the last couple months. We had a problem where the quickest we could get insights on releases was about an hour, which was not acceptible. Internally, we use kafka to log requests to our various endpoints and we have services downstream who consume and do various things with the data. We had the idea to add a downstream service that consumes 100% of our edge traffic and 1% of non-edge traffic, which provides us with a large enough sample size to analyize our releases. 
+
+As you can see by the graph below, we can watch in near real-time the adoption rate of our new release version based on the data we log from our endpoints. The data is updated every 30 seconds; however, we can get down to sub 5 second updates if we wanted.
+
+![Release Version Change](https://fluxthis.io/release_version.png)
+
+Another graph we monitor heavily is the amount of invalid versus valid requests we receive on our major endpoints. We measure invalid and valid based on important values that upstream stakeholders care about. This ensures that we didn't accidently release some code missing key values that essentially render the data useless. 
+
+![inavlid vs valid requests](https://fluxthis.io/invalid-validd.png)
+
+These are just a few of the graphs that we have in our dashboard that we use during every release. 
