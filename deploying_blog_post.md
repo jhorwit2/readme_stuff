@@ -59,6 +59,6 @@ These are just a few of the graphs that we have in our dashboard that we use dur
 
 ## How we do it
 
-This all starts with our external facing system logging requests to our various endpoints to [kafka](https://kafka.apache.org/). From there we have any number of downstream consumers who listen to these topics and do cool stuff with the data. In our example, we ingest a subset of the data and save it to [InfluxDB](https://influxdb.com), so that we can run queries on why things are bad and also populate our internal [grafana](http://grafana.org/) dasbhoards. 
+This whole process all starts with our external facing service logging requests from our endpoints to [kafka](https://kafka.apache.org/). From there we have any number of downstream consumers who listen to these topics and do cool stuff with the data. In our example, we ingest a subset of the data and save it to [InfluxDB](https://influxdb.com), so that we can run queries on why things are bad and also populate our internal [grafana](http://grafana.org/) dasbhoards. 
 
 Want to know more? Leave some comments! Also, we are [hiring](http://www.addthis.com/careers?jvi=oeja0fwr,job) :D!
