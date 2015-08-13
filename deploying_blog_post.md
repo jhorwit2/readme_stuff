@@ -1,7 +1,9 @@
 # Lessons Learned Deploying Code used by over 15 million Websites
 
 Step 1. Realize you have a problem. 
+
 Step 2. Solve it
+
 Step 3. Profit
 
 Over the past year, the engineers on our Publisher team have been constantly iterating on our release plan so that we can deploy quickly and safely. One of the biggest and most fun problems we face is our scale. Deploying code that is used by over 15 million websites means we have to be extra careful, so that we don't break all our custom websites, for example. We have learned a lot along the way and I was hoping to share some of our lessons learned and processes we currently implement to ensure quality.
@@ -39,4 +41,6 @@ With this in mind here is our current plan:
  7. Grab a beer because you can be sure IE8 didn't break.
  
  This new deployment process has been its weight in gold. 
+
+
 ### 3. No real-time insights into our deployments
