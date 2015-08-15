@@ -36,7 +36,7 @@ Moving to edge releases has been one of the best moves we have done as far as en
 
 ## Real-time Insights into Deployments
 
-Real-time insights has been the fun project we have been interating on and making better over the last couple months. We had a problem where the quickest we could get insights on releases was about an hour, which was not acceptible. Internally, we use kafka to log requests to our various endpoints and we have services downstream who consume and do various things with the data. We had the idea to add a downstream service that consumes 100% of our edge traffic and 1% of non-edge traffic, which provides us with a large enough sample size to analyize our releases. 
+Real-time insights has been a project we have been interating on and making better over the last couple months. We had a problem where the quickest we could get insights on releases was about an hour, which was not acceptible. Internally, we use kafka to log requests to our various endpoints and we have services downstream who consume and do various things with the data. We had the idea to add a downstream service that consumes 100% of our edge traffic and 1% of non-edge traffic, which provides us with a large enough sample size to analyize our releases. 
 
 As you can see by the graph below, we can watch in near real-time the adoption rate of our new release version based on the data we log from our endpoints. The data is updated every 30 seconds; however, we can get down to sub 5 second updates if we wanted.
 
