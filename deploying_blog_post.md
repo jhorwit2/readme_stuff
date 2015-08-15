@@ -42,12 +42,11 @@ As you can see by the graph below, we can watch in near real-time the adoption r
 
 ![Release Version Change](https://fluxthis.io/release_version.png)
 
-Another graph we monitor heavily is the amount of invalid versus valid requests we receive on our major endpoints. We measure invalid and valid based on important values that upstream stakeholders care about. This ensures that we didn't accidently release some code missing key values that essentially render the data useless. 
+Another graph we monitor heavily is the amount of invalid versus valid requests we receive on our major endpoints. We measure invalid and valid based on important values that upstream stakeholders care about. This ensures that we didn't accidently release some code missing key values that essentially render the data useless. If something did break, we can query our backend datasource [InfluxDB](https://influxdb.com) to quickly determine what values are invalid and on what websites and/or browsers. The ability to not only visualize, but also query our data has been tremendously helpful. 
 
 ![inavlid vs valid requests](https://fluxthis.io/invalid-validd.png)
 
 These are just a few of the graphs that we have in our dashboard that we use during every release. 
-
 
 ## How we do it
 
